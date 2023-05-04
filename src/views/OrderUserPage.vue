@@ -9,7 +9,7 @@
     >
       <template v-slot:top>
         <v-toolbar flat>
-          <v-toolbar-title>Comenzi</v-toolbar-title>
+          <v-toolbar-title>Orders</v-toolbar-title>
           <v-divider class="mx-4" inset vertical></v-divider>
           <v-spacer></v-spacer>
           <v-dialog v-model="dialog" max-width="500px">
@@ -49,10 +49,10 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="blue darken-1" text @click="close">
-                  Anuleaza
+                  Cancel
                 </v-btn>
                 <v-btn color="blue darken-1" text @click="save">
-                  Salveaza
+                  Save
                 </v-btn>
               </v-card-actions>
             </v-card>
@@ -97,11 +97,11 @@ export default {
     dialog: false,
     dialogDelete: false,
     headers: [
-      { text: "Ora", value: "time" },
-      { text: "Data", value: "date" },
-      { text: "Pret", value: "menuElement.unitPrice" },
-      { text: "Cantitatea", value: "quantity" },
-      { text: "Actiuni", value: "actions", sortable: false }
+      { text: "Time", value: "time" },
+      { text: "Date", value: "date" },
+      { text: "Price", value: "menuElement.unitPrice" },
+      { text: "Quantity", value: "quantity" },
+      { text: "Actiona", value: "actions", sortable: false }
     ],
     items: [],
     all_items: [],

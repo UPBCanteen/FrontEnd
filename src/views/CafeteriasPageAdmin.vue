@@ -5,17 +5,17 @@
       :headers="headers"
       :items="items"
       class="elevation-1"
-      :footer-props="{ 'items-per-page-text': 'Elemente pe pagina' }"
+      :footer-props="{ 'items-per-page-text': 'Number of items' }"
     >
       <template v-slot:top>
         <v-toolbar flat>
-          <v-toolbar-title>Cantine </v-toolbar-title>
+          <v-toolbar-title>Canteens </v-toolbar-title>
           <v-divider class="mx-4" inset vertical></v-divider>
           <v-spacer></v-spacer>
           <v-dialog v-model="dialog" max-width="500px">
             <template v-slot:activator="{ on, attrs }">
               <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
-                Adauga Cantina
+                Add canteens
               </v-btn>
             </template>
 
@@ -28,17 +28,17 @@
                 <v-container>
                   <v-row>
                     <v-col cols="12" sm="6" md="4">
-                      <v-text-field v-model="editedItem.name" label="Nume">
+                      <v-text-field v-model="editedItem.name" label="Name">
                       </v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
-                      <v-text-field v-model="editedItem.location" label="Loc">
+                      <v-text-field v-model="editedItem.location" label="Address">
                       </v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
                       <v-text-field
                         v-model="editedItem.schedule"
-                        label="Program"
+                        label="Schedule"
                       >
                       </v-text-field>
                     </v-col>
@@ -49,10 +49,10 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="blue darken-1" text @click="close">
-                  Anuleaza
+                  Cancel
                 </v-btn>
                 <v-btn color="blue darken-1" text @click="save">
-                  Salveaza
+                  Save
                 </v-btn>
               </v-card-actions>
             </v-card>
@@ -66,10 +66,10 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="blue darken-1" text @click="closeDelete"
-                  >Anuleaza</v-btn
+                  >Cancel</v-btn
                 >
                 <v-btn color="blue darken-1" text @click="deleteItemConfirm"
-                  >Da</v-btn
+                  >Yes</v-btn
                 >
                 <v-spacer></v-spacer>
               </v-card-actions>
@@ -101,10 +101,10 @@ export default {
     dialog: false,
     dialogDelete: false,
     headers: [
-      { text: "Nume", value: "name" },
-      { text: "Loc", value: "location" },
-      { text: "Program", value: "schedule" },
-      { text: "Actiuni", value: "actions", sortable: false }
+      { text: "Name", value: "name" },
+      { text: "Address", value: "location" },
+      { text: "Schedule", value: "schedule" },
+      { text: "Actions", value: "actions", sortable: false }
     ],
     items: [],
     editedIndex: -1,

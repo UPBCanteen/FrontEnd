@@ -1,8 +1,8 @@
 <template>
   <!--  <div id="app">-->
   <v-app id="app">
-    <!-- <UserMenuBar v-if="$store.state.role === 'USER'" /> -->
-    <AdminMenuBar/>
+    <UserMenuBar />
+    <!-- <AdminMenuBar v-if="$store.state.role === 'USER'"/> -->
     <!-- <EmployeeMenuBar v-else-if="$store.state.role === 'CAFETERIA'" /> -->
     <router-view />
   </v-app>
@@ -10,15 +10,15 @@
 </template>
 
 <script>
-import AdminMenuBar from "./views/AdminMenuBar";
+// import AdminMenuBar from "./views/AdminMenuBar";
 // import EmployeeMenuBar from "./views/EmployeeMenuBar";
-// import UserMenuBar from "./views/UserMenuBar";
+import UserMenuBar from "./views/UserMenuBar";
 export default {
   name: "App",
   components: {
-    AdminMenuBar,
+    // AdminMenuBar,
     // EmployeeMenuBar,
-    // UserMenuBar
+    UserMenuBar
   },
   data: () => ({
     role: localStorage.getItem("role")

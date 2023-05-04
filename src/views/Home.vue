@@ -8,14 +8,14 @@
         >
           <v-card>
             <v-avatar
-                class="ma-3"
+                class="ma-6"
                 size="125"
                 rounded="0"
               >
                 <v-img :src="card.src"></v-img>
               </v-avatar>
             
-              <v-card-title>{{card.title}}: {{ card.number }}</v-card-title>
+              <v-card-title style="align-content: center;font-family: 'Serif';  font-size: 40px;">{{card.title}}: {{ card.number }}</v-card-title>
            
 
             
@@ -31,9 +31,9 @@ export default {
   data() {
     return {
       cards: [
-        { title: 'Users', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 2, number:3},
-        { title: 'Canteens', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 2, number:3},
-        { title: 'Reviews', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 2, number:3},
+        { title: 'Users', src: 'https://icones.pro/wp-content/uploads/2021/03/icone-de-groupe-symbole-png-orange.png', flex: 2, number:3},
+        { title: 'Canteens', src: 'https://icon-library.com/images/icon-restaurant/icon-restaurant-2.jpg', flex: 2, number:3},
+        { title: 'Reviews', src: 'https://cdn3.iconfinder.com/data/icons/feedback-review-3/48/19-512.png', flex: 2, number:3},
       ],
       image: {
         backgroundImage:
@@ -46,8 +46,13 @@ export default {
 
 <style>
 #container{
-  padding-left: 200px;
-  padding-top: 50px;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  padding-top: 30px;
+  /* padding-right: 20%; */
+  padding-left: 20%;
+
 }
 .home {
   height: 750px;

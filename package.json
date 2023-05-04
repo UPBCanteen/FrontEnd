@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
-    "@mdi/font": "^5.9.55",
     "@popperjs/core": "^2.4.4",
     "autoprefixer": "10.4.5",
     "axios": "^0.21.1",
@@ -38,6 +37,7 @@
   },
   "devDependencies": {
     "@babel/polyfill": "^7.7.0",
+    "@mdi/font": "^7.2.96",
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-plugin-pwa": "^5.0.8",

@@ -29,10 +29,10 @@ export default {
     dialog: false,
     dialogDelete: false,
     headers: [
-      { text: "Data", value: "date" },
-      { text: "Nume", value: "menuElement.name" },
-      { text: "Pret (lei)", value: "menuElement.unitPrice" },
-      { text: "Numar", value: "quantity" }
+      { text: "Date", value: "date" },
+      { text: "Name", value: "menuElement.name" },
+      { text: "Price (lei)", value: "menuElement.unitPrice" },
+      { text: "Quantity", value: "quantity" }
     ],
     desserts: []
   }),

@@ -2,14 +2,14 @@
   <Slide open-on-hover>
     <UserPage />
     <a style="text-decoration: none;" href="/">
-      <span>Acasa</span>
+      <span>Home</span>
     </a>
     <a style="text-decoration: none;" href="/cafeteriaPage">
-      <span>Cantine</span>
+      <span>Canteens</span>
     </a>
-    <a style="text-decoration: none;" href="/userPageAdmin">
+    <!-- <a style="text-decoration: none;" href="/userPageAdmin">
       <span>Utilizatori</span>
-    </a>
+    </a> -->
     <a style="text-decoration: none;" href="#" v-on:click="logout()">
       <span>Logout</span>
     </a>
