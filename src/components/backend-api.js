@@ -69,7 +69,7 @@ export default {
     return AXIOS.get("/canteen/get-all");
   },
   getUsers() {
-    return AXIOS.get("/user");
+    return AXIOS.get("/user/getUsers");
   },
   getOrders() {
     return AXIOS.get("/order/getAll");

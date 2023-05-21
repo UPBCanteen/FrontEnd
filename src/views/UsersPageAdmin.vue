@@ -110,8 +110,7 @@ export default {
     dialogDelete: false,
     headers: [
       { text: "Email", value: "email" },
-      { text: "Prenume", value: "firstName" },
-      { text: "Nume", value: "lastName" },
+      { text: "Nume", value: "username" },
       { text: "Rol", value: "role.name" },
       { text: "Actiuni", value: "actions", sortable: false }
     ],
@@ -124,16 +123,12 @@ export default {
     editedIndex: -1,
     editedItem: {
       email: "",
-      first_name: "",
-      last_name: "",
-      name: "",
+      username: "",
       roleName: ""
     },
     defaultItem: {
       email: "",
-      first_name: "",
-      last_name: "",
-      name: "",
+      username: "",
       roleName: ""
     }
   }),
