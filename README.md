@@ -1,5 +1,5 @@
 # polifood-frontend
-
+npm i -D eslint@7.32.0
 ## Project setup
 ```
 npm install --legacy-peer-deps
