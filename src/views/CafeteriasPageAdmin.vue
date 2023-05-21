@@ -159,20 +159,23 @@ export default {
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
       
-      api.edit_canteen(item);
-      this.initialize();
+      api.edit_canteen(item).then(response => {
+          this.initialize();
+        });
     },
 
     deleteItem(item) {
       this.editedIndex = this.items.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialogDelete = true;
-      api.delete_canteen(item.id);
     },
 
     deleteItemConfirm() {
-      console.log("here");
-      this.items.splice(this.editedIndex, 1);
+      console.log(this.items);
+      api.delete_canteen(this.items[this.editedIndex].id).then(response => {
+          this.initialize();
+        });
+      // this.items.splice(this.editedIndex, 1);
       this.closeDelete();
     },
 
@@ -199,8 +202,10 @@ export default {
       // }
       // var canteen = {"name": this.name,"location": this.location,"schedule": this.schedule};
       // console.log("test3" + JSON.stringify(this.editedItem));
-      api.add_new_canteen(this.editedItem);
-      this.initialize();
+      api.add_new_canteen(this.editedItem).then(response => {
+          this.initialize();
+        });
+      
 
       this.close();
     }

@@ -85,6 +85,6 @@ export default {
   },
   delete_canteen(canteen_id) {
     console.log(canteen_id);
-    return AXIOS.delete("canteen/delete", canteen_id);
+    return AXIOS.delete("canteen/delete/" + canteen_id);
   }
 };
