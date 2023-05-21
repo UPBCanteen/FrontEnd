@@ -28,17 +28,17 @@ export default {
     }
   },
   beforeCreate() {
-    api
-      .getUserWithoutId()
-      .then(response => {
-        console.log(response.data);
-        this.firstName = response.data.firstName;
-        this.lastName = response.data.lastName;
-        this.email = response.data.email;
-      })
-      .catch(error => {
-        this.errors.push(error);
-      });
+    // api
+    //   .getUserWithoutId()
+    //   .then(response => {
+    //     console.log(response.data);
+    //     this.firstName = response.data.firstName;
+    //     this.lastName = response.data.lastName;
+    //     this.email = response.data.email;
+    //   })
+    //   .catch(error => {
+    //     this.errors.push(error);
+    //   });
   }
 };
 </script>

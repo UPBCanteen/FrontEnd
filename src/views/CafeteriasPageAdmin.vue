@@ -107,6 +107,7 @@ export default {
       { text: "Actions", value: "actions", sortable: false }
     ],
     items: [],
+    errors: [],
     editedIndex: -1,
     editedItem: {
       name: "",
@@ -154,18 +155,23 @@ export default {
         });
     },
     editItem(item) {
-      this.editedIndex = this.items.indexOf(item);
+      
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
+      
+      api.edit_canteen(item);
+      this.initialize();
     },
 
     deleteItem(item) {
       this.editedIndex = this.items.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialogDelete = true;
+      api.delete_canteen(item.id);
     },
 
     deleteItemConfirm() {
+      console.log("here");
       this.items.splice(this.editedIndex, 1);
       this.closeDelete();
     },
@@ -186,11 +192,16 @@ export default {
       });
     },
     save() {
-      if (this.editedIndex > -1) {
-        Object.assign(this.items[this.editedIndex], this.editedItem);
-      } else {
-        this.items.push(this.editedItem);
-      }
+      // if (this.editedIndex > -1) {
+      //   Object.assign(this.items[this.editedIndex], this.editedItem);
+      // } else {
+      //   this.items.push(this.editedItem);
+      // }
+      // var canteen = {"name": this.name,"location": this.location,"schedule": this.schedule};
+      // console.log("test3" + JSON.stringify(this.editedItem));
+      api.add_new_canteen(this.editedItem);
+      this.initialize();
+
       this.close();
     }
   }
