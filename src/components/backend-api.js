@@ -67,7 +67,7 @@ export default {
     return AXIOS.get("/cafeteria/cafeteriaAdmin");
   },
   getUsers() {
-    return AXIOS.get("/user");
+    return AXIOS.get("/user/getUsers");
   },
   getOrders() {
     return AXIOS.get("/order/getAll");
