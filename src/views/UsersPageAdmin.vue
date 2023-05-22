@@ -1,5 +1,5 @@
 <template>
-  <div class="users_page" style="background-color: #f2ebc4">
+  <div class="users_page">
     <v-data-table
       :headers="headers"
       :items="items"
@@ -11,7 +11,7 @@
           <v-toolbar-title>Utilizatori</v-toolbar-title>
           <v-divider class="mx-4" inset vertical></v-divider>
           <v-spacer></v-spacer>
-          <v-dialog v-model="dialog" max-width="500px">
+          <!-- <v-dialog v-model="dialog" max-width="500px">
             <template v-slot:activator="{ on, attrs }">
               <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
                 Adauga Utilizator
@@ -65,7 +65,7 @@
                 </v-btn>
               </v-card-actions>
             </v-card>
-          </v-dialog>
+          </v-dialog> -->
 
           <v-dialog v-model="dialogDelete" max-width="500px">
             <v-card>
@@ -102,9 +102,9 @@ import { ModelSelect } from "vue-search-select";
 import api from "../components/backend-api";
 export default {
   props: {},
-  components: {
-    ModelSelect
-  },
+  // components: {
+  //   ModelSelect
+  // },
   data: () => ({
     dialog: false,
     dialogDelete: false,
@@ -181,7 +181,10 @@ export default {
     },
 
     deleteItemConfirm() {
+      // console.log(this.items[this.editedIndex].email);
+      api.delete_user(this.items[this.editedIndex].email).then(response => {
       this.items.splice(this.editedIndex, 1);
+      });
       this.closeDelete();
     },
 
@@ -212,6 +215,7 @@ export default {
       } else {
         this.items.push({ ...this.editedItem, ...{ name: new_name } });
       }
+      api.add_user({"email": this.email, "username": this.username, "password": this.password})
       this.close();
     }
   }

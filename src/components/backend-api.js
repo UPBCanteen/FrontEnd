@@ -86,5 +86,11 @@ export default {
   delete_canteen(canteen_id) {
     console.log(canteen_id);
     return AXIOS.delete("canteen/delete", canteen_id);
+  },
+  add_user(user){
+    return AXIOS.post("/user/authentication/register", user);
+  },
+  delete_user(email){
+    return AXIOS.delete("/user/deleteUser/" + email);
   }
 };
