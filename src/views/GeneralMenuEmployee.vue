@@ -127,7 +127,8 @@ export default {
       portion: "1",
       unitPrice: "",
       imageURL: ""
-    }
+    }, 
+    idCantina: "3"
   }),
 
   computed: {
@@ -152,7 +153,8 @@ export default {
   methods: {
     initialize() {
       api
-        .getMenuElementsFromCafeteria(localStorage.getItem("cafeteria_name"))
+        // .getMenuElementsFromCafeteria(localStorage.getItem("cafeteria_name"))
+        .getMenuElementsFromCafeteria(this.idCantina)
         .then(response => {
           for (const el of response.data)
             this.items.push({
@@ -210,6 +212,21 @@ export default {
       } else {
         this.items.push({ ...this.editedItem, ...{ portion: new_portion } });
       }
+
+      console.log(this.idCantina);
+      let meal = {
+        "canteen_id": this.idCantina,
+        "meal": {
+          "quantity": this.editedItem.unitValue,
+          "name": this.editedItem.name,
+          "price": this.editedItem.unitPrice,
+          "unit": this.editedItem.unitType,
+          "image": this.editedItem.imageURL
+        }
+        
+      };
+
+      api.add_new_meal(meal);
       this.close();
     }
   }
