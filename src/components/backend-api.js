@@ -54,8 +54,8 @@ export default {
   getMenu() {
     return AXIOS.get("/menu");
   },
-  getMenuElementsFromCafeteria(name) {
-    return AXIOS.get("/cafeteria/getMenuFromCafeteria/" + name);
+  getMenuElementsFromCafeteria(canteen_id) {
+    return AXIOS.get("/meal/get-by-canteen-id/" + canteen_id);
   },
   getMenuElementsFromMenuDay(day, cafeteria) {
     return AXIOS.get(
@@ -85,6 +85,9 @@ export default {
   },
   delete_canteen(canteen_id) {
     console.log(canteen_id);
-    return AXIOS.delete("canteen/delete", canteen_id);
+    return AXIOS.delete("canteen/delete/" + canteen_id);
+  },
+  add_new_meal(meal) {
+    return AXIOS.post("meal/add", meal);
   }
 };
