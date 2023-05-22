@@ -84,20 +84,16 @@ export default {
     return AXIOS.put("/canteen/edit", canteen);
   },
   delete_canteen(canteen_id) {
-    console.log(canteen_id);
-<<<<<<< HEAD
-    return AXIOS.delete("canteen/delete", canteen_id);
+    return AXIOS.delete("canteen/delete/" + canteen_id);
   },
   add_user(user){
     return AXIOS.post("/user/authentication/register", user);
   },
   delete_user(email){
     return AXIOS.delete("/user/deleteUser/" + email);
-=======
-    return AXIOS.delete("canteen/delete/" + canteen_id);
+    
   },
   add_new_meal(meal) {
     return AXIOS.post("meal/add", meal);
->>>>>>> 0c531400b798397075833487e9012c544292d1ac
   }
 };
