@@ -83,7 +83,6 @@ router.beforeEach((to, from, next) => {
   // if not, redirect to login page.
 
   if (to.path !== "/login")
-    
     if (localStorage.getItem("access_token") == null) {
       next({
         path: "/login"

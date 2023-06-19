@@ -51,11 +51,10 @@ export default {
 }
 
 .bm-item-list {
-      width: 100%;
-      height: 100%;
-      justify-content: center;
-      font-size: 20px;
-      margin: 0; 
-    }
-
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  font-size: 20px;
+  margin: 0;
+}
 </style>

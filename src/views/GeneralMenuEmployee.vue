@@ -48,10 +48,7 @@
                     </v-text-field>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <v-text-field
-                      v-model="editedItem.image"
-                      label="Link poza"
-                    >
+                    <v-text-field v-model="editedItem.image" label="Link poza">
                     </v-text-field>
                   </v-col>
                 </v-row>
@@ -63,7 +60,9 @@
               <v-btn color="blue darken-1" text @click="close">
                 Anuleaza
               </v-btn>
-              <v-btn color="blue darken-1" text @click="saveEdit"> Salveaza </v-btn>
+              <v-btn color="blue darken-1" text @click="saveEdit">
+                Salveaza
+              </v-btn>
             </v-card-actions>
           </v-card>
         </v-dialog>
@@ -129,7 +128,7 @@ export default {
       quantity: "",
       price: "",
       image: ""
-    }, 
+    },
     idCantina: "3"
   }),
 
@@ -172,7 +171,6 @@ export default {
     },
 
     editItem(item) {
-      
       this.editedIndex = this.items.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
@@ -205,11 +203,11 @@ export default {
       });
     },
 
-    saveEdit(){
+    saveEdit() {
       console.log("esited" + JSON.stringify(this.editedItem));
       api.editMeal(this.editedItem).then(response => {
         // this.initialize();
-      })
+      });
       this.close();
     },
 
@@ -227,15 +225,14 @@ export default {
 
       console.log(this.idCantina);
       let meal = {
-        "canteenId": this.idCantina,
-        "mealDTO": {
-          "quantity": this.editedItem.unitValue,
-          "name": this.editedItem.name,
-          "price": this.editedItem.unitPrice,
-          "unit": this.editedItem.unitType,
-          "image": this.editedItem.imageURL
+        canteenId: this.idCantina,
+        mealDTO: {
+          quantity: this.editedItem.unitValue,
+          name: this.editedItem.name,
+          price: this.editedItem.unitPrice,
+          unit: this.editedItem.unitType,
+          image: this.editedItem.imageURL
         }
-        
       };
 
       api.add_new_meal(meal);

@@ -2,7 +2,7 @@ import axios from "axios";
 import store from "../store/index";
 import { req } from "vuelidate/lib/validators/common";
 
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
 
 const AXIOS = axios.create({
   baseURL: `http://192.168.137.66:8098/api`,
@@ -23,9 +23,9 @@ AXIOS.interceptors.response.use(
     return response;
   },
   function(error) {
-     if (error.response.status === 403) {
-    //   //store.state.errorDialog = true; TODO in state
-    //   //store.state.errorModel = {errorType: "Access denied", message: "You have no permission on this action"};
+    if (error.response.status === 403) {
+      //   //store.state.errorDialog = true; TODO in state
+      //   //store.state.errorModel = {errorType: "Access denied", message: "You have no permission on this action"};
     }
     return Promise.reject(error);
   }
@@ -86,23 +86,22 @@ export default {
   delete_canteen(canteen_id) {
     return AXIOS.delete("canteen/delete/" + canteen_id);
   },
-  add_user(user){
+  add_user(user) {
     return AXIOS.post("/user/authentication/register", user);
   },
-  delete_user(email){
+  delete_user(email) {
     return AXIOS.delete("/user/deleteUser/" + email);
-    
   },
   add_new_meal(meal) {
     return AXIOS.post("meal/add", meal);
   },
-  getUsersNumber(){
+  getUsersNumber() {
     return AXIOS.get("/user/getUserNumber");
   },
-  getCanteenNumber(){
+  getCanteenNumber() {
     return AXIOS.get("/canteen/getNumberCanteen");
   },
   editMeal(meal) {
     return AXIOS.put("/meal/edit", meal);
-  },
+  }
 };

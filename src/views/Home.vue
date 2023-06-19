@@ -7,11 +7,10 @@
             <v-img :src="card.src"></v-img>
           </v-avatar>
 
-          <v-card-title style="align-content: center;font-family: 'Serif';  font-size: 40px;">{{ card.title }}: {{
-            initialize(card.title) }}</v-card-title>
-
-
-
+          <v-card-title
+            style="align-content: center;font-family: 'Serif';  font-size: 40px;"
+            >{{ card.title }}: {{ initialize(card.title) }}</v-card-title
+          >
         </v-card>
       </v-col>
     </v-row>
@@ -19,20 +18,32 @@
 </template>
 
 <script>
-import backendApi from '../components/backend-api';
+import backendApi from "../components/backend-api";
 import api from "../components/backend-api";
 export default {
   name: "Home",
   mounted() {
-    this.initialize()
+    this.initialize();
   },
   data() {
     return {
       numberOfUser: 0,
       numberOfCanteens: 0,
       cards: [
-        { title: 'Users', src: 'https://icones.pro/wp-content/uploads/2021/03/icone-de-groupe-symbole-png-orange.png', flex: 3, number: this.numberOfUser },
-        { title: 'Canteens', src: 'https://icon-library.com/images/icon-restaurant/icon-restaurant-2.jpg', flex: 3, number: 3 }
+        {
+          title: "Users",
+          src:
+            "https://icones.pro/wp-content/uploads/2021/03/icone-de-groupe-symbole-png-orange.png",
+          flex: 3,
+          number: this.numberOfUser
+        },
+        {
+          title: "Canteens",
+          src:
+            "https://icon-library.com/images/icon-restaurant/icon-restaurant-2.jpg",
+          flex: 3,
+          number: 3
+        }
       ],
       image: {
         backgroundImage:
@@ -42,8 +53,9 @@ export default {
   },
   methods: {
     initialize(name) {
-      if (name == 'Users') {
-        api.getUsersNumber()
+      if (name == "Users") {
+        api
+          .getUsersNumber()
           .then(response => {
             this.numberOfUser = response.data;
           })
@@ -52,7 +64,8 @@ export default {
           });
         return this.numberOfUser;
       } else {
-        api.getCanteenNumber()
+        api
+          .getCanteenNumber()
           .then(response => {
             this.numberOfCanteens = response.data;
           })
@@ -60,13 +73,9 @@ export default {
             this.errors.push(error);
           });
         return this.numberOfCanteens;
-
       }
     }
-
-  },
-
-
+  }
 };
 </script>
 
@@ -78,7 +87,6 @@ export default {
   padding-top: 30px;
   /* padding-right: 20%; */
   padding-left: 20%;
-
 }
 
 .home {

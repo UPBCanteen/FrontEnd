@@ -32,7 +32,10 @@
                       </v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
-                      <v-text-field v-model="editedItem.location" label="Address">
+                      <v-text-field
+                        v-model="editedItem.location"
+                        label="Address"
+                      >
                       </v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
@@ -155,13 +158,12 @@ export default {
         });
     },
     editItem(item) {
-      
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
-      
+
       api.edit_canteen(item).then(response => {
-          this.initialize();
-        });
+        this.initialize();
+      });
     },
 
     deleteItem(item) {
@@ -173,8 +175,8 @@ export default {
     deleteItemConfirm() {
       console.log(this.items);
       api.delete_canteen(this.items[this.editedIndex].id).then(response => {
-          this.initialize();
-        });
+        this.initialize();
+      });
       // this.items.splice(this.editedIndex, 1);
       this.closeDelete();
     },
@@ -203,9 +205,8 @@ export default {
       // var canteen = {"name": this.name,"location": this.location,"schedule": this.schedule};
       // console.log("test3" + JSON.stringify(this.editedItem));
       api.add_new_canteen(this.editedItem).then(response => {
-          this.initialize();
-        });
-      
+        this.initialize();
+      });
 
       this.close();
     }

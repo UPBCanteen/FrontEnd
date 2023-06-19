@@ -32,7 +32,7 @@ export default {
 
 <style>
 #app {
-  background-image: url('assets/output-onlinepngtools (1).png') !important;
+  background-image: url("assets/output-onlinepngtools (1).png") !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
   background-size: cover !important;
@@ -48,5 +48,4 @@ export default {
   right: 0;
   position: absolute;
 }
-
 </style>

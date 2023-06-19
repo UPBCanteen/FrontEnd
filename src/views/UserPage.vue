@@ -1,5 +1,5 @@
 <template>
-  <v-card  variant="tonal" color="transparent">
+  <v-card variant="tonal" color="transparent">
     <v-card-title style="font-size: 30px; text-decoration: underline;">
       UPB Canteen
     </v-card-title>

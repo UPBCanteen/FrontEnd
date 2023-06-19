@@ -183,7 +183,7 @@ export default {
     deleteItemConfirm() {
       // console.log(this.items[this.editedIndex].email);
       api.delete_user(this.items[this.editedIndex].email).then(response => {
-      this.items.splice(this.editedIndex, 1);
+        this.items.splice(this.editedIndex, 1);
       });
       this.closeDelete();
     },
@@ -215,7 +215,11 @@ export default {
       } else {
         this.items.push({ ...this.editedItem, ...{ name: new_name } });
       }
-      api.add_user({"email": this.email, "username": this.username, "password": this.password})
+      api.add_user({
+        email: this.email,
+        username: this.username,
+        password: this.password
+      });
       this.close();
     }
   }
