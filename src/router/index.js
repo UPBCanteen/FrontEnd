@@ -15,6 +15,7 @@ import OrderTableEmployee from "../views/OrderTableEmployee";
 Vue.use(VueRouter);
 const routes = [
   {
+    // register done, login remained
     path: "/login",
     name: "Login",
     component: Login
@@ -25,6 +26,7 @@ const routes = [
     component: Home
   },
   {
+    // needs to be done
     path: "/dailyMenus",
     name: "DailyMenus",
     component: DailyMenusPageEmployee
@@ -75,19 +77,21 @@ const router = new VueRouter({
   routes
 });
 
-// router.beforeEach((to, from, next) => {
-//   // if (to.matched.some(record => record.meta.requiresAuth)) {
-//   // this route requires auth, check if logged in
-//   // if not, redirect to login page.
-//   if (to.path !== "/login")
-//     if (localStorage.getItem("access_token") == null) {
-//       next({
-//         path: "/login"
-//       });
-//     } else {
-//       next();
-//     }
-//   next(); // make sure to always call next()!
-// });
+router.beforeEach((to, from, next) => {
+  // if (to.matched.some(record => record.meta.requiresAuth)) {
+  // this route requires auth, check if logged in
+  // if not, redirect to login page.
+
+  if (to.path !== "/login")
+    
+    if (localStorage.getItem("access_token") == null) {
+      next({
+        path: "/login"
+      });
+    } else {
+      next();
+    }
+  next(); // make sure to always call next()!
+});
 
 export default router;

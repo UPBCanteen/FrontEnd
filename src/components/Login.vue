@@ -134,7 +134,7 @@ export default {
       this.$store
         .dispatch("login", { email: this.email, password: this.password })
         .then(() => {
-          this.$router.push("/");
+          this.$router.push("/").catch((err) => {console.log(err);});;
         })
         .catch(error => {
           console.log(error);

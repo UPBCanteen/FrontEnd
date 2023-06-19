@@ -3,20 +3,20 @@
     <v-row dense>
       <v-col cols="4" v-for="(item, i) in items" :key="i">
         <v-card class="mx-auto my-12" max-width="374" @click="in_v(item.id)">
-          <v-img height="250" :src="item.imageURL"></v-img>
+          <v-img height="250" :src="item.image"></v-img>
 
           <v-card-title>{{ item.name }}</v-card-title>
 
           <v-card-text>
             <v-row align="center" class="mx-0"> </v-row>
 
-            <div class="my-4 subtitle-1">Pret: {{ item.unitPrice }} lei</div>
+            <div class="my-4 subtitle-1">Pret: {{ item.price }} lei</div>
 
             <div></div>
             <v-row align="center" class="mx-0"> </v-row>
 
             <div class="my-4 subtitle-1">
-              Portia: {{ item.unitValue }} {{ item.unitType }}
+              Portia: {{ item.quantity }} {{ item.unit }}
             </div>
 
             <div></div>
@@ -114,7 +114,7 @@ export default {
     new_order(time) {
       this.dialog = false;
       console.log(this.id + "" + time);
-      api.add_new_order(this.id, time);
+      api.add_new_order(this.id, time, this.name);
     },
     in_v(id) {
       console.log("in v_");

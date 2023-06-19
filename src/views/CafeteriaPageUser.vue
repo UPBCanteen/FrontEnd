@@ -6,7 +6,7 @@
           :loading="loading"
           class="mx-auto my-12"
           max-width="374"
-          @click="reserve(item.name)"
+          @click="reserve(item.id)"
         >
           <template slot="progress">
             <v-progress-linear

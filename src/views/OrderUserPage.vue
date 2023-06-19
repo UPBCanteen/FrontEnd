@@ -98,9 +98,9 @@ export default {
     dialogDelete: false,
     headers: [
       { text: "Time", value: "time" },
-      { text: "Date", value: "date" },
-      { text: "Price", value: "menuElement.unitPrice" },
-      { text: "Quantity", value: "quantity" },
+      { text: "Meal", value: "mealQuantities[0].meal.name" },
+      { text: "Price", value: "mealQuantities[0].meal.price" },
+      { text: "Quantity", value: "mealQuantities[0].quantity" },
       { text: "Actiona", value: "actions", sortable: false }
     ],
     items: [],
